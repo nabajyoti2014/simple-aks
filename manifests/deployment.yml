@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myaksculsters008-be89"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myaksculsters008-be89"
+  template:
+    metadata:
+      labels:
+        app: "myaksculsters008-be89"
+    spec:
+      containers:
+        - name: "myaksculsters008-be89"
+          image: "myacr67009.azurecr.io/myaksculsters008"
+          ports:
+          - containerPort: 5000
